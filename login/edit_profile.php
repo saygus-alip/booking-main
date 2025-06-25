@@ -8,7 +8,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 include 'db_connect.php'; // เชื่อมต่อกับฐานข้อมูล
-include 'auth_check.php'; // เรียกใช้งานการตรวจสอบการเข้าสู่ระบบและสถานะผู้ใช้
 
 // ดึงข้อมูลของผู้ใช้ที่ล็อกอินจากตาราง personnel
 $personnel_id = $_SESSION['personnel_id'];

@@ -3,7 +3,6 @@ session_start();
 
 // หากล็อกอินแล้ว จะแสดงข้อมูลห้องประชุมได้
 include 'db_connect.php';
-include 'auth_check.php'; // เรียกใช้งานการตรวจสอบการเข้าสู่ระบบและสถานะผู้ใช้
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินแล้วหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {

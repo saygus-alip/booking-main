@@ -8,7 +8,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 include 'db_connect.php';
-include 'auth_check.php';
 
 // หากมีการส่งข้อมูลสำหรับแก้ไข (POST) และมี personnel_id ส่งมา
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['personnel_id'])) {

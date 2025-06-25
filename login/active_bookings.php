@@ -8,7 +8,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 include 'db_connect.php';
-include 'auth_check.php';
 
 // กำหนด SQL เบื้องต้น
 $sql = "SELECT 

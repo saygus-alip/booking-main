@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'auth_check.php'; // เรียกใช้งานการตรวจสอบการเข้าสู่ระบบและสถานะผู้ใช้
 include 'db_connect.php';
 
 // ดึงข้อมูลจำนวนห้องในแต่ละสถานะ
@@ -43,7 +42,6 @@ if ($result_all->num_rows > 0) {
 } else {
     $total_rooms = 0;
 }
-$conn->close();
 
 $sql = "SELECT Hall_Name, Dot_Color FROM hall";
 $result = $conn->query($sql);
