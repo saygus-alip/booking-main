@@ -32,13 +32,13 @@ WHERE b.Status_ID = 4
 ";
 
 $result = $conn->query($sql);
-$color = $row['DotColor'];
-
 
 $bookings = [];
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
+
+        $color = $row['DotColor'];
         
         // รวมชื่อเป็นสตริงเดียว เช่น "สมชาย ใจดี"
         $bookerName = $row['First_Name'] . ' ' . $row['Last_Name'];

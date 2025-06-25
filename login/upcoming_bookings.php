@@ -317,7 +317,7 @@ $result = $conn->query($sql);
                 $tableStyle = "display: none;";
             }
             ?>
-                <table id="member-table" class="table table-striped" style="width:100%; <?= $tableStyle ?>">
+                <table id="member-table" class="table table-striped"<?= $tableStyle ?>">
                     <thead>
                         <tr>
                             <th>#</th>

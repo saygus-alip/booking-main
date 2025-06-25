@@ -66,7 +66,6 @@ $room_dot_color = isset($rooms[0]['Dot_Color']) ? $rooms[0]['Dot_Color'] : '#ccc
     <title>หน้าหลัก</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="login/LOGO.png" sizes="32x32">
     <style>
     @media (max-width: 991px) {
         #navbarNav {
@@ -544,47 +543,6 @@ $room_dot_color = isset($rooms[0]['Dot_Color']) ? $rooms[0]['Dot_Color'] : '#ccc
     </nav>
 
 
-    <!-- Modal ต้อนรับ -->
-    <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="alertModalLabel">Alert</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <?php if (isset($_SESSION['username'])): ?>
-                    Hello <?php echo $_SESSION['username']; ?>, Welcome to the meeting room booking website!
-                    <?php else: ?>
-                    Hello Teacher, Welcome to the meeting room booking website!
-                    <?php endif; ?>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal สำหรับแสดงรายละเอียดการจอง -->
-    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="bookingModalLabel">รายละเอียดกิจกรรม</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="bookingModalBody">
-                    <!-- รายละเอียดจะถูกเพิ่มที่นี่ -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <div class="full-height">
         <div class="text-center" style="background-color: #010f33;">
             <div class="calendar-header">
@@ -611,6 +569,24 @@ $room_dot_color = isset($rooms[0]['Dot_Color']) ? $rooms[0]['Dot_Color'] : '#ccc
                 </thead>
                 <tbody id="calendar-body"></tbody>
             </table>
+        </div>
+    </div>
+
+        <!-- Modal สำหรับแสดงรายละเอียดการจอง -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">รายละเอียดกิจกรรม</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="bookingModalBody">
+                    <!-- รายละเอียดจะถูกเพิ่มที่นี่ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -703,7 +679,6 @@ $room_dot_color = isset($rooms[0]['Dot_Color']) ? $rooms[0]['Dot_Color'] : '#ccc
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-
     // ชื่อเดือนภาษาไทย
     const monthNames = [
         "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
@@ -888,17 +863,6 @@ $room_dot_color = isset($rooms[0]['Dot_Color']) ? $rooms[0]['Dot_Color'] : '#ccc
     // ดึงข้อมูลจากฐานข้อมูลครั้งแรก เมื่อโหลดหน้าเสร็จ
     fetchBookings();
     </script>
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 
