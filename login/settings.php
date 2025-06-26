@@ -8,7 +8,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 include 'db_connect.php';
-include 'auth_check.php';
 
 // ดึงข้อมูลการจองห้องประชุมในแต่ละวันของเดือนปัจจุบัน
 $sql = "SELECT DAY(Date_Start) AS Day, COUNT(*) AS TotalBookings

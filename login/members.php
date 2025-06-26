@@ -9,7 +9,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 // หากล็อกอินแล้ว จะแสดงข้อมูลสมาชิกได้
 include 'db_connect.php';
-include 'auth_check.php'; // เรียกใช้งานการตรวจสอบการเข้าสู่ระบบและสถานะผู้ใช้
 
 // ดึงข้อมูลของผู้ใช้ที่ล็อกอินจากตาราง personnel
 $personnel_id = $_SESSION['personnel_id'];

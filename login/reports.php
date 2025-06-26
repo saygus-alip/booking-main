@@ -9,7 +9,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 // เชื่อมต่อฐานข้อมูล
 include 'db_connect.php';
-include 'auth_check.php'; // เรียกใช้งานการตรวจสอบการเข้าสู่ระบบและสถานะผู้ใช้
 
 // ฟังก์ชันส่งข้อความไปยัง Telegram
 function sendTelegramMessage($chatId, $message, $botToken) {
@@ -607,7 +606,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tableStyle = "display: none;";
         }
         ?>
-            <table id="member-table" class="table table-striped" style="width:100%; <?= $tableStyle ?>">
+            <table id="member-table" class="table table-striped"<?= $tableStyle ?>">
                 <thead>
                     <tr>
                         <th>#</th>
