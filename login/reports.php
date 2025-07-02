@@ -40,7 +40,7 @@ function sendTelegramMessage($chatId, $message, $botToken) {
 }
 
 // BOT Token ของคุณ
-$telegramBotToken = "7668345720:AAGIKyTGFQGUGiMOjbax5Mv9Y30Chydnqc4";
+$telegramBotToken = "8068943475:AAGzWj4ivFpyplpDqqj-rMchI4gnc2VIvrA";
 
 // ดึงข้อมูล personnel_id จาก session
 $personnel_id = $_SESSION['personnel_id'];  // ตรวจสอบว่าผู้ใช้ล็อกอินอยู่

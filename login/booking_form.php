@@ -3,14 +3,12 @@ session_start();
 
 // สร้างการเชื่อมต่อ PDO (ปรับค่าตามเซิร์ฟเวอร์ของคุณ)
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=booking-main", "root", "alip4523pop", [
+    $pdo = new PDO("mysql:host=localhost;dbname=booking-main", "root", "", [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
-
-include 'auth_check.php';  // ตรวจสอบสิทธิ์การเข้าถึง
 
 // ฟังก์ชันส่งข้อความไปยัง Telegram (ถ้าไม่ต้องการใช้สามารถตัดออกได้)
 function sendTelegramMessage($chatId, $message, $botToken) {
@@ -215,7 +213,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     error_log("Selected Hall Name: " . $selected_hall_name); // Debug: ตรวจสอบค่า hall name
 
-    $message = "มีการจองห้องประชุมใหม่:\n"
+    $message = "มีการจองห้องประชุมใหม่ !!\n"
         . "หัวข้อ: $topic_name\n"
         . "จำนวนผู้เข้าประชุม: $attendees\n"
         . "เริ่มเวลา: $date_start $time_start\n"
