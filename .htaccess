@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /booking-main/
+
+# ตรวจสอบว่าไม่ใช่ไฟล์จริง หรือไม่ใช่ directory จริง
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite URL ที่ไม่มีนามสกุล .php
+RewriteRule ^(.*)$ $1.php [NC,L]

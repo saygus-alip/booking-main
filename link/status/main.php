@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db_connect.php';
+require_once '../database/db_connect.php'; 
 
 // ดึงข้อมูลจำนวนห้องในแต่ละสถานะ
 $sql_pending = "SELECT COUNT(*) AS rooms_pending FROM booking WHERE Status_ID = 1";

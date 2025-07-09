@@ -1,9 +1,6 @@
 <?php
 
-header("Location: login/main.php");
+header("Location: link/status/main");
 exit();
-
-// teste
-//////
 
 ?>
