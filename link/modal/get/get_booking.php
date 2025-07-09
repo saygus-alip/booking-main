@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: application/json");
-include 'db_connect.php'; // เชื่อมต่อฐานข้อมูล
+require_once '../../database/db_connect.php'; 
 
 // ตรวจสอบการเชื่อมต่อ
 if ($conn->connect_error) {
