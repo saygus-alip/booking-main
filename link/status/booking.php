@@ -2,7 +2,7 @@
 session_start();
 
 // หากล็อกอินแล้ว จะแสดงข้อมูลห้องประชุมได้
-include 'db_connect.php';
+require_once '../database/db_connect.php'; 
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินแล้วหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
