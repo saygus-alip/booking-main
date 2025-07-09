@@ -1,0 +1,384 @@
+@media (max-width: 991px) {
+        #navbarNav {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .calendar td {
+            height: 80px;
+        }
+
+        .booking-dot {
+            width: 8px;
+            height: 8px;
+        }
+
+        .activing {
+            margin-top: 15px;
+        }
+
+        .disactiving {
+            margin-top: 15px;
+        }
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        margin: 0;
+        padding: 0;
+    }
+
+    .responsive-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Navbar brand logo */
+    .navbar-brand .responsive-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Adjusting padding for Navbar */
+    .navbar {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    /* Adjust padding for nav-link */
+    .nav-link {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    /* Dropdown menu styling */
+    .nav-item .dropdown-menu {
+        background-color: rgb(1, 20, 69);
+        color: #ffffff;
+    }
+
+    .dropdown-menu .dropdown-item {
+        color: #ffffff;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #e0a444;
+        color: #ffffff;
+    }
+
+    .full-height {
+        margin-top: 50px;
+    }
+
+    .full-height {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        padding-bottom: 20px;
+        flex-grow: 1;
+        overflow: auto;
+    }
+
+    .container-custom-1 {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        width: 100%;
+        /* กำหนดระยะห่างระหว่างปฏิทินกับ footer */
+    }
+
+    .text-center {
+        color: white;
+        padding: 20px;
+        border-radius: 5px 5px 0 0;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+
+    }
+
+    .full-height2 {
+        margin-top: 50px;
+    }
+
+    .full-height2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        padding-bottom: 20px;
+        flex-grow: 1;
+        overflow: auto;
+        padding-bottom: 20px;
+    }
+
+    .container-custom-2 {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        width: 100%;
+        margin-bottom: 100px;
+        /* กำหนดระยะห่างระหว่างปฏิทินกับ footer */
+        flex-wrap: wrap;
+        /* ช่วยให้รายการที่เกินขนาดไปยังบรรทัดถัดไป */
+    }
+
+    .text-center2 {
+        color: white;
+        padding: 20px;
+        border-radius: 5px 5px 0 0;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+
+    }
+
+    .container-custom-2 {
+        background-color: #fff;
+        padding: 30px;
+        display: flex;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 20px;
+        font-size: 16px;
+        color: #6c757d;
+    }
+
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    #month-year {
+        font-size: 1.5em;
+        text-align: left;
+        color: #fff;
+        margin: 0;
+    }
+
+    table.calendar {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        width: 14%;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    td {
+        cursor: pointer;
+    }
+
+    td:hover {
+        background-color: #f0f0f0;
+    }
+
+    .navigation {
+        display: flex;
+        gap: 10px;
+    }
+
+    /* ตั้งค่าขนาดและลักษณะของเซลล์ในปฏิทิน */
+    .calendar {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .calendar th,
+    .calendar td {
+        width: 14.2%;
+        height: 100px;
+        text-align: center;
+        vertical-align: top;
+        position: relative;
+        border: 1px solid #ddd;
+        padding: 5px;
+    }
+
+    /* จุดสีของกิจกรรม */
+    .booking-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        gap: 5px;
+    }
+
+    .booking-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    /* สีของจุดที่ตรงกับ Message Box */
+    .dot-gray {
+        background-color: #999999;
+    }
+
+    /* สีเทา */
+    .dot-red {
+        background-color: #d0021b;
+    }
+
+    /* สีแดง */
+    .dot-yellow {
+        background-color: #f5a623;
+    }
+
+    /* สีเหลือง */
+    .dot-blue {
+        background-color: #007bff;
+    }
+
+    /* สีน้ำเงิน */
+    .dot-green {
+        background-color: #4CAF50;
+    }
+
+    /* สีเขียว */
+
+    /* ไฮไลต์วันที่ปัจจุบัน */
+    .current-day {
+        background-color: #010f33;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* รูปแบบการจัดวางข้อมูลใน Message Box */
+    .booking-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        /* ระยะห่างระหว่างจุดสีและข้อความ */
+        margin-bottom: 10px;
+    }
+
+    /* จุดสีใน Modal */
+    .booking-item .booking-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        /* ป้องกันไม่ให้จุดสีเปลี่ยนขนาด */
+    }
+
+    /* ข้อความกิจกรรม */
+    .booking-item p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+
+    .dot-red {
+        background-color: #d0021b;
+    }
+
+    .dot-blue {
+        background-color: #007bff;
+    }
+
+    .dot-green {
+        background-color: #4CAF50;
+    }
+
+    .dot-yellow {
+        background-color: #f5a623;
+    }
+
+    .dot-orange {
+        background-color: #FFA500;
+    }
+
+    .dot-purple {
+        background-color: #800080;
+    }
+
+    .upcoming {
+        width: 350px;
+        height: 160px;
+        background-color: rgb(1, 66, 136);
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+
+    .activing {
+        width: 350px;
+        height: 160px;
+        background-color: rgb(0, 79, 3);
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+
+    .disactiving {
+        width: 350px;
+        height: 160px;
+        background-color: rgb(124, 106, 0);
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+
+    .allroom {
+        width: 350px;
+        height: 160px;
+        margin-top: 15px;
+        background-color: rgb(106, 1, 1);
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+
+    .allbooking {
+        width: 350px;
+        height: 160px;
+        background-color: rgb(72, 1, 81);
+        margin-top: 15px;
+        border-radius: 10px;
+        margin-right: 15px;
+
+    }
