@@ -76,7 +76,7 @@
                         <a href="../status/booking" class="nav-link">จองห้อง</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../login/index" class="nav-link active">เข้าสู่ระบบ</a>
+                        <a href="../login/index" class="nav-link">เข้าสู่ระบบ</a>
                     </li>
                     <?php endif; ?>
                 </ul>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark p-3" style="background-color: #010f33;">
         <div class="container-fluid">
-            <a href="main" class="navbar-brand d-flex align-items-center">
+            <a href="../status/main" class="navbar-brand d-flex align-items-center">
                 <img class="responsive-img" src="../img/LOGO.png" alt="system booking" width="45" height="45">
                 <span class="ms-3">ระบบจองห้องประชุม</span>
             </a>
@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="main"
+                        <a href="../status/main"
                             class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'main.php') ? 'active' : ''; ?>">หน้าหลัก</a>
                     </li>
 
@@ -73,10 +73,10 @@
 
                     <?php else: ?>
                     <li class="nav-item">
-                        <a href="booking.php" class="nav-link">จองห้อง</a>
+                        <a href="../status/booking" class="nav-link">จองห้อง</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link active">เข้าสู่ระบบ</a>
+                        <a href="../login/index" class="nav-link active">เข้าสู่ระบบ</a>
                     </li>
                     <?php endif; ?>
                 </ul>
