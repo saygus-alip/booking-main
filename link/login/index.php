@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }         
 
             // เปลี่ยนเส้นทางไปยังหน้าหลัก
-            header('Location: main.php');
+            header('Location: ../status/main');
             exit;
         } else {
             $error_message = "รหัสผ่านไม่ถูกต้อง"; // แจ้งเตือนว่ารหัสผ่านไม่ถูกต้อง
@@ -42,9 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
