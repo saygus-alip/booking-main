@@ -54,7 +54,7 @@ $result = $conn->query($sql);
 <body>
 
     <?php require_once '../navbar/navbar_main.php'; ?>
-    
+
     <div class="full-height">
         <div class="text-center" style="background-color: #010f33;">
             <div style="font-size: 20px">รอตรวจสอบ</div>
