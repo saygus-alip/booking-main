@@ -24,10 +24,23 @@
         flex-direction: column;
     }
 
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    main {
+        flex-grow: 1;
+        /* ให้ส่วนเนื้อหาขยายเต็มพื้นที่ที่เหลือ */
+        overflow: auto;
+        padding-bottom: 20px;
+    }
+
+    /* จัดข้อความให้อยู่กึ่งกลางทั้งแนวตั้งและแนวนอน */
     .table td,
     .table th {
-        padding-top: 15px;  /* Padding ด้านบน */
-        padding-bottom: 15px; /* Padding ด้านล่าง */
+        /* Padding ด้านล่าง */
         text-align: center;
         /* จัดกึ่งกลางแนวนอน */
         vertical-align: middle;
@@ -61,17 +74,41 @@
         /* กำหนดความโค้งให้กับรูปภาพ */
     }
 
-    body {
+    .full-height {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-    }
-
-    main {
+        justify-content: flex-start;
+        align-items: center;
+        height: calc(100vh - 56px);
+        position: relative;
+        padding-top: 60px;
+        padding-bottom: 20px;
         flex-grow: 1;
-        /* ให้ส่วนเนื้อหาขยายเต็มพื้นที่ที่เหลือ */
         overflow: auto;
         padding-bottom: 20px;
+    }
+
+    .text-center {
+        color: white;
+        padding: 20px;
+        border-radius: 5px 5px 0 0;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #e0e0e0;
+        max-width: 1200px;
+        width: 100%;
+
+    }
+
+    .container-custom {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     /* Navbar brand logo */
@@ -94,7 +131,7 @@
 
     /* Dropdown menu styling */
     .nav-item .dropdown-menu {
-        background-color: rgb(1, 20, 69);
+        background-color: #010f33;
         color: #ffffff;
     }
 
@@ -107,38 +144,21 @@
         color: #ffffff;
     }
 
-    .container-custom {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        max-width: 1200px;
+    .footer {
         width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .full-height {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: calc(100vh - 56px);
+        background-color: #f8f9fa;
+        padding: 20px;
+        font-size: 16px;
+        color: #6c757d;
+        margin-top: auto;
         position: relative;
-        padding-top: 60px;
-        padding-bottom: 20px;
-        flex-grow: 1;
-        overflow: auto;
     }
 
-    .text-center {
+    .btn-outline.active {
+        background-color: #007bff;
         color: white;
-        padding: 20px;
-        border-radius: 5px 5px 0 0;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        border: 1px solid #e0e0e0;
-        max-width: 1200px;
-        width: 100%;
+    }
 
+    .stat-content {
+        display: none;
     }

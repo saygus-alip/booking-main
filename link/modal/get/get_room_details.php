@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+require_once '../../database/db_connect.php'; 
 
 if (isset($_GET['id'])) {
     $hall_id = $_GET['id'];

@@ -1,6 +1,6 @@
 <?php
 // ไฟล์เชื่อมต่อฐานข้อมูล
-include 'db_connect.php';
+require_once '../../database/db_connect.php'; 
 
 // ตรวจสอบว่ามีการส่งค่า id ผ่าน GET มาหรือไม่
 if (isset($_GET['id'])) {

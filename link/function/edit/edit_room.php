@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db_connect.php'; // เชื่อมต่อกับฐานข้อมูล
+require_once '../../database/db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['hall_id'])) {
     // รับข้อมูลจากฟอร์ม
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['hall_id'])) {
         (!isset($_FILES['hall_image']['name']) || empty($_FILES['hall_image']['name']))
     ) {
         $_SESSION['message'] = "<div class='alert alert-info'>ไม่มีการเปลี่ยนแปลงข้อมูล</div>";
-        header('Location: booking.php');
+        header('Location: ../../status/booking');
         exit;
     }
 
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['hall_id'])) {
 
         if ($result_check_name->num_rows > 0) {
             $_SESSION['message'] = "<div class='alert alert-danger'>ห้องนี้มีชื่อซ้ำแล้วในระบบ!</div>";
-            header('Location: booking.php');
+            header('Location: ../../status/booking');
             exit;
         }
     }
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['hall_id'])) {
         // ตรวจสอบนามสกุลของไฟล์
         if (!in_array($fileExt, $allowed)) {
             $_SESSION['message'] = "<div class='alert alert-danger'>รูปภาพที่อัปโหลดไม่ถูกต้อง! อนุญาตเฉพาะไฟล์: " . implode(", ", $allowed) . "</div>";
-            header('Location: booking.php');
+            header('Location: ../../status/booking');
             exit;
         }
 
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['hall_id'])) {
 
         if (!move_uploaded_file($fileTmp, $uploadPath)) {
             $_SESSION['message'] = "<div class='alert alert-danger'>อัปโหลดรูปภาพไม่สำเร็จ!</div>";
-            header('Location: booking.php');
+            header('Location: ../../status/booking');
             exit;
         }
         $update_image = true;
@@ -112,10 +112,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['hall_id'])) {
         $_SESSION['message'] = "<div class='alert alert-danger'>เกิดข้อผิดพลาด: " . $stmt_update->error . "</div>";
     }
 
-    header('Location: booking.php');
+    header('Location: ../../status/booking');
     exit;
 } else {
-    header('Location: booking.php');
+    header('Location: ../../status/booking');
     exit;
 }
 ?>

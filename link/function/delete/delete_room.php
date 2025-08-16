@@ -3,7 +3,7 @@
 session_start();
 
 // เชื่อมต่อฐานข้อมูล
-include 'db_connect.php';
+require_once '../../database/db_connect.php';
 
 // ตรวจสอบว่ามีการส่ง ID มาหรือไม่
 if (isset($_GET['id'])) {
@@ -28,12 +28,12 @@ if (isset($_GET['id'])) {
     $conn->close();
 
     // รีไดเรคไปหน้ารายการสมาชิก (members.php)
-    header('Location: booking.php');
+    header('Location: ../../status/booking');
     exit;
 } else {
     // ถ้าไม่ได้ส่ง ID มาจะบอกว่าไม่พบข้อมูล
     $_SESSION['message'] = "<div class='alert alert-danger'>ไม่พบข้อมูลที่ต้องการลบ</div>";
-    header('Location: booking.php');
+    header('Location: ../../status/booking');
     exit;
 }
 ?>

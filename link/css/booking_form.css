@@ -24,43 +24,6 @@
         flex-direction: column;
     }
 
-    .table td,
-    .table th {
-        padding-top: 15px;  /* Padding ด้านบน */
-        padding-bottom: 15px; /* Padding ด้านล่าง */
-        text-align: center;
-        /* จัดกึ่งกลางแนวนอน */
-        vertical-align: middle;
-        /* จัดกึ่งกลางแนวตั้ง */
-    }
-
-    table {
-        border-collapse: separate;
-        border-spacing: 0;
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-    th,
-    td {
-        border: 1px solid #e0e0e0;
-        padding: 20px;
-    }
-
-    th {
-        background-color: #f8f9fa;
-    }
-
-    td {
-        background-color: #ffffff;
-    }
-
-    td img {
-        border-radius: 5px;
-        /* กำหนดความโค้งให้กับรูปภาพ */
-    }
-
     body {
         display: flex;
         flex-direction: column;
@@ -107,16 +70,6 @@
         color: #ffffff;
     }
 
-    .container-custom {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        max-width: 1200px;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
     .full-height {
         display: flex;
         flex-direction: column;
@@ -128,6 +81,7 @@
         padding-bottom: 20px;
         flex-grow: 1;
         overflow: auto;
+        padding-bottom: 20px;
     }
 
     .text-center {
@@ -141,4 +95,24 @@
         max-width: 1200px;
         width: 100%;
 
+    }
+
+    .container-custom {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 20px;
+        font-size: 16px;
+        color: #6c757d;
+        margin-top: auto;
+        position: relative;
     }

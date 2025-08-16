@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db_connect.php'; 
+require_once '../../database/db_connect.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // ดึงข้อมูลจากฟอร์ม
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // รีไดเร็กต์กลับไปที่หน้า members.php หลังจากทำงานเสร็จ
-    header("Location: members.php");
+    header("Location: ../../form/add/members");
     exit;
 }
 ?>

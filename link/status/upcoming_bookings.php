@@ -3,7 +3,7 @@ session_start();
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: index.php');
+    header('Location: ../login/index');
     exit;
 }
 
@@ -157,7 +157,7 @@ $result = $conn->query($sql);
 
 
     <!-- JavaScript -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../boostarp/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.7/js/dataTables.bootstrap5.js"></script>
@@ -173,7 +173,7 @@ $result = $conn->query($sql);
             $('#detailModal .modal-body').html('Loading...');
             // ทำการ AJAX request ไปยัง room_detail_upcom.php โดยส่ง booking id
             $.ajax({
-                url: 'room_detail_upcom.php',
+                url: '../modal/room/room_detail_upcom.php',
                 type: 'GET',
                 data: {
                     id: bookingId

@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+require_once '../../database/db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $booking_id = intval($_POST['booking_id']);
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ii", $status_id, $booking_id);
 
     if ($stmt->execute()) {
-        echo "<script>alert('อนุมัติการจองสำเร็จ!'); window.location.href='reports.php';</script>";
+        echo "<script>alert('อนุมัติการจองสำเร็จ!'); window.location.href='../../status/reports';</script>";
     } else {
         echo "<script>alert('เกิดข้อผิดพลาด! กรุณาลองใหม่อีกครั้ง'); window.history.back();</script>";
     }

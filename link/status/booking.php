@@ -109,10 +109,10 @@ if (isset($_GET['id'])) {
                             // ถ้าห้องเปิดใช้งาน แสดงปุ่มจอง
                             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                                 // ถ้าล็อกอินแล้ว ให้แสดงปุ่มจองห้องที่สามารถคลิกได้
-                                echo "<button class='btn btn-outline-dark btn-sm m-1' onclick=\"window.location.href='booking_form.php?hall_id=" . $row['Hall_ID'] . "';\">จองห้อง</button>";
+                                echo "<button class='btn btn-outline-dark btn-sm m-1' onclick=\"window.location.href='../form/add/booking_form?hall_id=" . $row['Hall_ID'] . "';\">จองห้อง</button>";
                             } else {
                                 // ถ้ายังไม่ได้ล็อกอิน ให้ปุ่มจองพาไปยังหน้าเข้าสู่ระบบ
-                                echo "<button class='btn btn-outline-dark btn-sm m-1' onclick=\"alert('กรุณาเข้าสู่ระบบก่อนจองห้อง'); window.location.href='index.php';\">จองห้อง</button>";
+                                echo "<button class='btn btn-outline-dark btn-sm m-1' onclick=\"alert('กรุณาเข้าสู่ระบบก่อนจองห้อง'); window.location.href='../login/index';\">จองห้อง</button>";
                             }
                         } else {
                         }
@@ -132,7 +132,7 @@ if (isset($_GET['id'])) {
                                 <i class='fas fa-edit'></i> แก้ไข
                             </button>";
 
-                        echo "<a href='delete_room.php?id=" . $row['Hall_ID'] . "' class='btn btn-outline-danger btn-sm m-1' onclick='return confirm(\"คุณแน่ใจว่าต้องการลบห้องนี้?\")'>ลบ</a>";
+                        echo "<a href='../function/delete/delete_room?id=" . $row['Hall_ID'] . "' class='btn btn-outline-danger btn-sm m-1' onclick='return confirm(\"คุณแน่ใจว่าต้องการลบห้องนี้?\")'>ลบ</a>";
                         }
 
                         echo "</td>";
@@ -159,7 +159,7 @@ if (isset($_GET['id'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="add_room.php" method="post" enctype="multipart/form-data">
+                    <form action="../function/add/add_room" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="hall_id" id="hall_id">
                         <div class="mb-3">
                             <label for="hall_name" class="form-label">ชื่อห้อง</label>
@@ -209,7 +209,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="modal-body">
                     <!-- เพิ่ม enctype เพื่อรองรับการอัปโหลดไฟล์ -->
-                    <form action="edit_room.php" method="post" enctype="multipart/form-data">
+                    <form action="../function/edit/edit_room" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="hall_id" id="edit_hall_id">
                         <div class="mb-3">
                             <label for="edit_hall_name" class="form-label">ชื่อห้อง</label>
@@ -275,7 +275,7 @@ if (isset($_GET['id'])) {
 
 
     <!-- JavaScript -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../boostarp/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.7/js/dataTables.bootstrap5.js"></script>
@@ -308,7 +308,7 @@ if (isset($_GET['id'])) {
 
     function loadRoomDetails(hallId) {
         $.ajax({
-            url: 'get_room_details.php',
+            url: 'modal/get/get_room_details.php',
             type: 'GET',
             data: {
                 id: hallId

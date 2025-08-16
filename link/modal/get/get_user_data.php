@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php'; // ตรวจสอบการเชื่อมต่อฐานข้อมูล
+require_once '../../database/db_connect.php'; 
 
 if (isset($_GET['id'])) {
     $personnel_id = $_GET['id'];

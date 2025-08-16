@@ -10,6 +10,6 @@ if (!isset($_POST['remember'])) {
 }
 
 // กลับไปที่หน้า index.php
-header('Location: index.php');
+header('Location: ../../login/index');
 exit;
 ?>
