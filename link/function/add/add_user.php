@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // ตรวจสอบว่า email ลงท้ายด้วย @spa.ac.th เท่านั้น
     if (!preg_match('/@spa\.ac\.th$/', $email)) {
         $_SESSION['message'] = "<div class='alert alert-danger'>Email ต้องลงท้ายด้วย @spa.ac.th เท่านั้น</div>";
-        header("Location: members.php");
+        header("Location: ../../form/add/members");
         exit;
     }
 

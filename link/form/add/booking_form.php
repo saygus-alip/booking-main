@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $stmtConflict->fetch(PDO::FETCH_ASSOC);
     if ($result['conflictCount'] > 0) {
         $_SESSION['message'] = "<div class='alert alert-danger'>เวลาที่คุณเลือกชนกับการจองที่มีอยู่แล้ว กรุณาเลือกช่วงเวลาใหม่</div>";
-        header("Location: booking_form.php");
+        header("Location: booking_form");
         exit;
     }
  

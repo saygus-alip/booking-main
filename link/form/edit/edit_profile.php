@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->num_rows > 0) {
             echo "<script>
                     alert('Telegram ID นี้มีผู้ใช้งานแล้ว!');
-                    window.location.href='edit_profile.php';
+                    window.location.href='edit_profile';
                   </script>";
             exit;
         }
@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($updateFields)) {
         echo "<script>
                 alert('ไม่มีการเปลี่ยนแปลงข้อมูล!');
-                window.location.href='edit_profile.php';
+                window.location.href='edit_profile';
               </script>";
         exit;
     }
@@ -173,13 +173,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo "<script>
                 alert('ข้อมูลอัปเดตเรียบร้อยแล้ว!');
-                window.location.href='edit_profile.php';
+                window.location.href='edit_profile';
               </script>";
         exit;
     } else {
         echo "<script>
                 alert('เกิดข้อผิดพลาด: " . addslashes($stmt->error) . "');
-                window.location.href='edit_profile.php';
+                window.location.href='edit_profile';
               </script>";
         exit;
     }
