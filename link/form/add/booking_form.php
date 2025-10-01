@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $stmtConflict->fetch(PDO::FETCH_ASSOC);
     if ($result['conflictCount'] > 0) {
         $_SESSION['message'] = "<div class='alert alert-danger'>เวลาที่คุณเลือกชนกับการจองที่มีอยู่แล้ว กรุณาเลือกช่วงเวลาใหม่</div>";
-        header("Location: booking_form");
+        header("Location: booking_form.php");
         exit;
     }
  
@@ -160,12 +160,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $uploaded_At = date("Y-m-d H:i:s");
             } else {
                 $_SESSION['message'] = "<div class='alert alert-danger'>เกิดข้อผิดพลาดในการอัปโหลดไฟล์</div>";
-                header("Location: booking_form");
+                header("Location: booking_form.php");
                 exit;
             }
         } else {
             $_SESSION['message'] = "<div class='alert alert-danger'>ประเภทไฟล์ไม่ถูกต้อง (อนุญาตเฉพาะ JPG, JPEG, PNG, GIF)</div>";
-            header("Location: booking_form");
+            header("Location: booking_form.php");
             exit;
         }
     }
