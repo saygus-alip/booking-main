@@ -3,7 +3,7 @@ session_start();
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินแล้วหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: ../../login/index');
+    header('Location: ../../login/index.php');
     exit;
 }
 
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->num_rows > 0) {
             echo "<script>
                     alert('Telegram ID นี้มีผู้ใช้งานแล้ว!');
-                    window.location.href='edit_profile';
+                    window.location.href='edit_profile.php';
                   </script>";
             exit;
         }
@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($updateFields)) {
         echo "<script>
                 alert('ไม่มีการเปลี่ยนแปลงข้อมูล!');
-                window.location.href='edit_profile';
+                window.location.href='edit_profile.php';
               </script>";
         exit;
     }
@@ -173,13 +173,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo "<script>
                 alert('ข้อมูลอัปเดตเรียบร้อยแล้ว!');
-                window.location.href='edit_profile';
+                window.location.href='edit_profile.php';
               </script>";
         exit;
     } else {
         echo "<script>
                 alert('เกิดข้อผิดพลาด: " . addslashes($stmt->error) . "');
-                window.location.href='edit_profile';
+                window.location.href='edit_profile.php';
               </script>";
         exit;
     }

@@ -4,13 +4,13 @@ require_once '../../database/db_connect.php';
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: ../../login/index');
+    header('Location: ../../login/index.php');
     exit;
 }
 
 // ตรวจสอบว่าได้ส่งค่า id การจองมาหรือไม่
 if (!isset($_GET['id'])) {
-    header('Location: ../../status/active_bookings');
+    header('Location: ../../status/active_bookings.php');
     exit;
 }
 
@@ -25,7 +25,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
     $_SESSION['message'] = "<div class='alert alert-danger'>ไม่พบข้อมูลการจอง</div>";
-    header('Location: ../../status/active_bookings');
+    header('Location: ../../status/active_bookings.php');
     exit;
 }
 
@@ -34,7 +34,7 @@ $row = $result->fetch_assoc();
 // ตรวจสอบว่าเจ้าของการจองตรงกับผู้ใช้ที่ล็อกอินหรือไม่
 if ($_SESSION['personnel_id'] != $row['Personnel_ID']) {
     $_SESSION['message'] = "<div class='alert alert-danger'>คุณไม่มีสิทธิ์ในการยกเลิกการจองนี้</div>";
-    header('Location: ../../status/active_bookings');
+    header('Location: ../../status/active_bookings.php');
     exit;
 }
 
@@ -45,11 +45,11 @@ $stmt->bind_param("i", $bookingId);
 
 if ($stmt->execute()) {
     $_SESSION['message'] = "<div class='alert alert-success'>ยกเลิกการจองเรียบร้อย</div>";
-    header('Location: ../../status/active_bookings');
+    header('Location: ../../status/active_bookings.php');
     exit;
 } else {
     $_SESSION['message'] = "<div class='alert alert-danger'>เกิดข้อผิดพลาดในการยกเลิกการจอง: " . $stmt->error . "</div>";
-    header('Location: ../../status/active_bookings');
+    header('Location: ../../status/active_bookings.php');
     exit;
 }
 ?>

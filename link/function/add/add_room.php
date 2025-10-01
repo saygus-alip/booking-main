@@ -36,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $hall_image = $targetFilePath;
                 } else {
                     $_SESSION['message'] = "<div class='alert alert-danger'>เกิดข้อผิดพลาดในการอัปโหลดรูปภาพ</div>";
-                    header("Location: ../../status/booking");
+                    header("Location: ../../status/booking.php");
                     exit;
                 }
             } else {
                 $_SESSION['message'] = "<div class='alert alert-danger'>ประเภทรูปภาพไม่ถูกต้อง (อนุญาตเฉพาะ JPG, JPEG, PNG, GIF)</div>";
-                header("Location: ../../status/booking");
+                header("Location: ../../status/booking.php");
                 exit;
             }
         }
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // รีไดเร็กต์กลับไปที่ booking.php หลังจากดำเนินการเสร็จ
-    header("Location: ../../status/booking");
+    header("Location: ../../status/booking.php");
     exit;
 }
 ?>

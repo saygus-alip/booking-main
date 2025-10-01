@@ -3,7 +3,7 @@ session_start();
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: ../login/index');
+    header('Location: ../login/index.php');
     exit;
 }
 
@@ -376,7 +376,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php endif; ?>
                             <!-- ปุ่มลบ (ทุกระยะให้แอดมินสามารถลบได้) -->
                             <?php if ($_SESSION['role_id'] == 2): ?>
-                            <a href="../function/delete/delete_booking?id=<?php echo $row['Booking_ID']; ?>"
+                            <a href="../function/delete/delete_booking.php?id=<?php echo $row['Booking_ID']; ?>"
                                 class="btn btn-outline-danger btn-sm ms-2"
                                 onclick="return confirm('คุณแน่ใจว่าต้องการลบรายการจองนี้?')">
                                 <i class="fas fa-trash"></i>
@@ -392,7 +392,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php endif; ?>
                             <!-- ปุ่มลบ -->
                             <?php if ($_SESSION['role_id'] == 2): ?>
-                            <a href="../function/delete/delete_booking?id=<?php echo $row['Booking_ID']; ?>"
+                            <a href="../function/delete/delete_booking.php?id=<?php echo $row['Booking_ID']; ?>"
                                 class="btn btn-outline-danger btn-sm ms-2"
                                 onclick="return confirm('คุณแน่ใจว่าต้องการลบรายการจองนี้?')">
                                 <i class="fas fa-trash"></i>
@@ -405,7 +405,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php endif; ?>
                             <!-- ปุ่มลบ -->
                             <?php if ($_SESSION['role_id'] == 2): ?>
-                            <a href="../function/delete/delete_booking?id=<?php echo $row['Booking_ID']; ?>"
+                            <a href="../function/delete/delete_booking.php?id=<?php echo $row['Booking_ID']; ?>"
                                 class="btn btn-outline-danger btn-sm ms-2"
                                 onclick="return confirm('คุณแน่ใจว่าต้องการลบรายการจองนี้?')">
                                 <i class="fas fa-trash"></i>
@@ -415,7 +415,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <!-- เมื่อการจองได้รับการอนุมัติแล้ว -->
                             <!-- ปุ่มลบ -->
                             <?php if ($_SESSION['role_id'] == 2): ?>
-                            <a href="../function/delete/delete_booking?id=<?php echo $row['Booking_ID']; ?>"
+                            <a href="../function/delete/delete_booking.php?id=<?php echo $row['Booking_ID']; ?>"
                                 class="btn btn-outline-danger btn-sm ms-2"
                                 onclick="return confirm('คุณแน่ใจว่าต้องการลบรายการจองนี้?')">
                                 <i class="fas fa-trash"></i>

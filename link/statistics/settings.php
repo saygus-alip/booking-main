@@ -3,7 +3,7 @@ session_start();
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: ../login/index');
+    header('Location: ../login/index.php');
     exit;
 }
 

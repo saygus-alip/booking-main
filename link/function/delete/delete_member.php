@@ -28,12 +28,12 @@ if (isset($_GET['id'])) {
     $conn->close();
 
     // รีไดเรคไปหน้ารายการสมาชิก (members.php)
-    header('Location: ../../form/add/members');
+    header('Location: ../../form/add/members.php');
     exit;
 } else {
     // ถ้าไม่ได้ส่ง ID มาจะบอกว่าไม่พบข้อมูล
     $_SESSION['message'] = "<div class='alert alert-danger'>ไม่พบข้อมูลที่ต้องการลบ</div>";
-    header('Location: ../../form/add/members');
+    header('Location: ../../form/add/members.php');
     exit;
 }
 ?>

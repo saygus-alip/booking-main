@@ -252,7 +252,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $_SESSION['message'] = "<div class='alert alert-success'>การจองห้องประชุมเสร็จสมบูรณ์</div>";
-    header("Location: ../../status/booking");
+    header("Location: ../../status/booking.php");
     exit;
 }
 ?>
@@ -285,7 +285,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div style="font-size: 20px">เพิ่มการจองห้อง</div>
         </div>
         <div class="container-custom">
-            <form action="booking_form" method="POST" enctype="multipart/form-data">
+            <form action="booking_form.php" method="POST" enctype="multipart/form-data">
 
                 <!-- แสดงข้อความที่นี่ -->
                 <?php

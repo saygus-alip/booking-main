@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['personnel_id'])) {
     // ตรวจสอบว่า email ถ้ามีการกรอกข้อมูล ต้องลงท้ายด้วย @spa.ac.th เท่านั้น
     if (!empty($email) && !preg_match('/@spa\.ac\.th$/', $email)) {
         $_SESSION['message'] = "<div class='alert alert-danger'>Email ต้องลงท้ายด้วย @spa.ac.th เท่านั้น</div>";
-        header('Location: ../../form/add/member');
+        header('Location: ../../form/add/member.php');
         exit;
     }
 
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['personnel_id'])) {
         $result_check = $stmt_check->get_result();
         if ($result_check->num_rows > 0) {
             $_SESSION['message'] = "<div class='alert alert-danger'>ข้อมูลซ้ำ! โปรดตรวจสอบข้อมูลของคุณ</div>";
-            header('Location: ../../form/add/member');
+            header('Location: ../../form/add/member.php');
             exit;
         }
         $stmt_check->close();
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['personnel_id'])) {
     // ตรวจสอบว่ามีฟิลด์ที่จะอัปเดตหรือไม่
     if (empty($fields)) {
         $_SESSION['message'] = "<div class='alert alert-warning'>ไม่พบข้อมูลที่ต้องการอัปเดต</div>";
-        header('Location: ../../form/add/member');
+        header('Location: ../../form/add/member.php');
         exit;
     }
     
@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['personnel_id'])) {
     $stmt_update = $conn->prepare($sql_update);
     if (!$stmt_update) {
         $_SESSION['message'] = "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
-        header('Location: ../../form/add/member');
+        header('Location: ../../form/add/member.php');
         exit;
     }
     
@@ -159,7 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['personnel_id'])) {
     }
     
     $stmt_update->close();
-    header('Location: ../../form/add/member');
+    header('Location: ../../form/add/member.php');
     exit;
 }
 ?>

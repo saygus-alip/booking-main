@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="alert alert-danger"><?php echo $error_message; ?></div>
                 <?php endif; ?>
 
-                <form action="register" method="POST">
+                <form action="register.php" method="POST">
                     <div class="mb-3">
                         <label for="first_name" class="form-label">ชื่อ</label>
                         <input type="text" class="form-control" id="first_name" name="first_name"

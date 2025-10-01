@@ -3,7 +3,7 @@ session_start();
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: ../login/index');
+    header('Location: ../login/index.php');
     exit;
 }
 
@@ -121,7 +121,7 @@ $result = $conn->query($sql);
                                     <i class="fas fa-info-circle"></i>
                                 </button>
                                 <?php if (isset($_SESSION['personnel_id']) && $_SESSION['personnel_id'] == $row['personnel_id']): ?>
-                                <a href="function/delete/delete_booking_active?id=<?php echo $row['Booking_ID']; ?>"
+                                <a href="function/delete/delete_booking_active.php?id=<?php echo $row['Booking_ID']; ?>"
                                     class="btn btn-outline-danger btn-sm"
                                     onclick="return confirm('คุณแน่ใจหรือไม่ว่าจะลบการจองนี้?');">
                                     <i class="fas fa-trash"></i>

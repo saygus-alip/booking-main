@@ -3,7 +3,7 @@ session_start();
 
 // ตรวจสอบว่าผู้ใช้ล็อกอินแล้วหรือไม่
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: ../../login/index');
+    header('Location: ../../login/index.php');
     exit;
 }
 
@@ -146,7 +146,7 @@ if (isset($_GET['id'])) {
                                       
                                       <i class='fas fa-edit'></i> แก้ไข
                                 </button>
-                                <a href='../../function/delete/delete_member?id=" . $row['personnel_id'] . "' class='btn btn-outline-danger btn-sm' onclick='return confirm(\"คุณแน่ใจว่าต้องการลบผู้ใช้งานนี้?\")'>ลบ</a>
+                                <a href='../../function/delete/delete_member.php?id=" . $row['personnel_id'] . "' class='btn btn-outline-danger btn-sm' onclick='return confirm(\"คุณแน่ใจว่าต้องการลบผู้ใช้งานนี้?\")'>ลบ</a>
                             </td>";
 
                             echo "</tr>";
@@ -172,7 +172,7 @@ if (isset($_GET['id'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="../../function/add/add_user" method="post">
+                    <form action="../../function/add/add_user.php" method="post">
                         <div class="mb-3">
                             <label for="first_name" class="form-label">ชื่อ</label>
                             <input type="text" class="form-control" id="first_name" name="first_name" required>
@@ -249,7 +249,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="modal-body">
                     <!-- แบบฟอร์มกรอกข้อมูลผู้ใช้งาน -->
-                    <form action="../../function/edit/edit_user" method="post">
+                    <form action="../../function/edit/edit_user.php" method="post">
                         <input type="hidden" name="personnel_id" id="edit_personnel_id">
                         <div class="mb-3">
                             <label for="first_name" class="form-label">ชื่อ</label>
