@@ -283,6 +283,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../font/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.bootstrap5.css">
     <link rel="stylesheet" href="../css/disactive_bookings.css">
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32">
 </head>
 
 <body>
@@ -302,30 +304,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         ?>
             <?php
-        // ดึงข้อมูลการจอง
-        $sql = "SELECT 
-                    b.Booking_ID,
-                    b.Topic_Name,
-                    b.Booking_File_Path,  -- เพิ่มคอลัมน์นี้
-                    h.Hall_Name,
-                    CONCAT(p.First_Name, ' ', p.Last_Name) AS Booker_Name,
-                    b.Date_Start,
-                    b.Time_Start,
-                    b.Time_End,
-                    b.Attendee_Count,
-                    s.Status_ID,
-                    s.Status_Name,
-                    CONCAT(a.First_Name, ' ', a.Last_Name) AS Approver_Name,
-                    b.Booking_Detail,
-                    b.Approval_Stage
-                FROM 
-                    booking b
-                LEFT JOIN personnel p ON b.Personnel_ID = p.Personnel_ID
-                LEFT JOIN hall h ON b.Hall_ID = h.Hall_ID
-                LEFT JOIN booking_status s ON b.Status_ID = s.Status_ID
-                LEFT JOIN personnel a ON b.Approver_ID = a.Personnel_ID
-                ORDER BY b.Booking_ID DESC";
-        $result = $conn->query($sql);
 
         // ถ้าไม่มีข้อมูลให้ซ่อนตารางโดยใช้ CSS
         $tableStyle = "";

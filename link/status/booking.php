@@ -40,6 +40,8 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="../font/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.bootstrap5.css">
     <link rel="stylesheet" href="../css/booking.css">
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32">
 </head>
 <body>
     
@@ -308,7 +310,7 @@ if (isset($_GET['id'])) {
 
     function loadRoomDetails(hallId) {
         $.ajax({
-            url: 'modal/get/get_room_details.php',
+            url: '../modal/get/get_room_details.php',
             type: 'GET',
             data: {
                 id: hallId

@@ -66,6 +66,8 @@ $room_dot_color = isset($rooms[0]['Dot_Color']) ? $rooms[0]['Dot_Color'] : '#ccc
     <link rel="stylesheet" href="../boostarp/css/bootstrap.min.css">
     <link rel="stylesheet" href="../font/css/all.min.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32">
 </head>
 
 <body>

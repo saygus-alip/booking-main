@@ -85,7 +85,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $booking_detail = $_POST['booking_detail'];  // ถ้าต้องการเก็บ ควรเพิ่มคอลัมน์ในตาราง (ตัวอย่างนี้ไม่ใช้)
     $status_id      = 1;  // สมมติ "รอตรวจสอบ"
     $approver_id    = $_SESSION['personnel_id'];
-    $approver_stage    = 0;
+
+    // ตรวจสอบ Personnel_ID
+    $personnelCheck = $pdo->prepare("SELECT Personnel_ID FROM personnel WHERE Personnel_ID = ?");
+    $personnelCheck->execute([$_SESSION['personnel_id']]);
+    if ($personnelCheck->rowCount() == 0) {
+        die("Personnel_ID ไม่ถูกต้องหรือไม่มีอยู่ในระบบ");
+    }
+
+    // ตรวจสอบ Hall_ID
+    $hallCheck = $pdo->prepare("SELECT Hall_ID FROM hall WHERE Hall_ID = ?");
+    $hallCheck->execute([$hall_id]);
+    if ($hallCheck->rowCount() == 0) {
+        die("Hall_ID ไม่ถูกต้องหรือไม่มีอยู่ในระบบ");
+    }
+
+    // ตรวจสอบ Status_ID
+    $statusCheck = $pdo->prepare("SELECT Status_ID FROM booking_status WHERE Status_ID = ?");
+    $statusCheck->execute([$status_id]);
+    if ($statusCheck->rowCount() == 0) {
+        die("Status_ID ไม่ถูกต้องหรือไม่มีอยู่ในระบบ");
+    }
+
+    // ตรวจสอบ Approver_ID
+    $approverCheck = $pdo->prepare("SELECT Personnel_ID FROM personnel WHERE Personnel_ID = ?");
+    $approverCheck->execute([$approver_id]);
+    if ($approverCheck->rowCount() == 0) {
+        die("Approver_ID ไม่ถูกต้องหรือไม่มีอยู่ในระบบ");
+    }
 
     // **ตรวจสอบการจองเวลาซ้ำกัน**
     // เงื่อนไข: หากมีการจองในห้องเดียวกัน (hall_id) ในวันที่เดียวกัน (date_start)
@@ -143,6 +170,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+
+
     // 4) INSERT ข้อมูลการจองลงในตาราง booking
     $sql = "INSERT INTO booking (
         Personnel_ID,
@@ -150,34 +179,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         Time_Start,
         Time_End,
         Hall_ID,
-        Equipment_ID,
         Attendee_Count,
         Booking_Detail,
         Status_ID,
         Approver_ID,
         Topic_Name,
-        Approval_Stage,
         Booking_File_Path,
         File_Type,
         File_Size,
-        Uploaded_At
+        Uploaded_At,
+        Approval_Stage
     ) VALUES (
         :personnel_id,
         :date_start,
         :time_start,
         :time_end,
         :hall_id,
-        :equipment_id,
         :attendee_count,
         :booking_detail,
         :status_id,
         :approver_id,
         :topic_name,
-        :approval_stage,
         :booking_file_path,
         :file_type,
         :file_size,
-        :uploaded_at
+        :uploaded_at,
+        :approval_stage
     )";
 
     $stmt = $pdo->prepare($sql);
@@ -187,17 +214,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':time_start'               => $time_start,
         ':time_end'                 => $time_end,
         ':hall_id'                  => $hall_id,
-        ':equipment_id'             => $equipment_id,
         ':attendee_count'           => $attendees,
         ':booking_detail'           => $booking_detail,
         ':status_id'                => $status_id,
         ':approver_id'              => $approver_id,
         ':topic_name'               => $topic_name,
-        ':approval_stage'           => $approval_stage,
         ':booking_file_path'        => $uploaded_File_Path,
         ':file_type'                => $file_Type,
         ':file_size'                => $file_Size,
-        ':uploaded_at'              => $uploaded_At
+        ':uploaded_at'              => $uploaded_At,
+        ':approval_stage'           => 1 // ระยะ approval เริ่มต้น
     ];
 
     try {
@@ -246,6 +272,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../../boostarp/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../font/css/all.min.css">
     <link rel="stylesheet" href="../../css/booking_form.css">
+    <link rel="icon" type="image/png" href="../../img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../../img/favicon-32x32.png" sizes="32x32">
 </head>
 
 <body>
