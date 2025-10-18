@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['hall_id'])) {
         }
 
         // กำหนดโฟลเดอร์ที่จะเก็บไฟล์อัปโหลด
-        $uploadDir = 'uploads/';
+        $uploadDir = '../../uploads/';
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0755, true);
         }

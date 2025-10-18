@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $uploaded_At = '';
 
     if (isset($_FILES['booking_file']) && $_FILES['booking_file']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'uploads/';
+        $uploadDir = '../../uploads/';
         // ถ้าไฟล์ PHP อยู่ในโฟลเดอร์ย่อย เช่น login ให้ระบุเป็น "login/uploads/" ตามความเหมาะสม
         $fileName = basename($_FILES['booking_file']['name']);
         $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
